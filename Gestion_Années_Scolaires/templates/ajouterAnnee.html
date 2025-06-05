@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+<body>
+    {% block content %}
+    
+    <div class="container mt-6">
+        <hr>
+        <h2 class="text-center mb-4">Ajouter une classe</h2>
+    <hr>
+    <br>
+        <div class="row justify-content-left">
+            <div class="col-md-2">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="form-group">{{ form.as_p}}</div>
+                    <button type="submit" class="btn btn-primary">Enregistrer</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+      
+</body>
+</html>

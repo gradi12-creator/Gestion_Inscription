@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+    <body>
+        {% block content %}
+            {% block tableaux %}
+            <table class="table" <h1><CEnter>CLASSE</CEnter> </h1><a href="{% url 'AjouterClasse'%}"><center>Ajouter une classe</center> </a>
+                <thead>
+                  <tr>
+                        <th>Id</th>
+                        <th>Libellé</th>
+                        <th>Titulaire</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {% for classe in classes %}
+                    <tr>
+                    <td >{{classe.id}}</td>
+                    <td>{{classe.Libellé }}</td>
+                    <td> {{classe.Titulaire}}</td>
+                    </tr>
+                 {% empty %}
+                    <tr>
+                         <td colspan="6">Aucune classe trouvée </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+                {% endblock %}
+              </table>
+    </body>
+        {% endblock %}
+    </html>

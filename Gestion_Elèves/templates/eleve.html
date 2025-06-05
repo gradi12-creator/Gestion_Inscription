@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+    <body>
+        {% block content %}
+            {% block tableaux %}
+            <table class="table" <h1><CEnter>ELEVES</CEnter> </h1><a href="{% url 'AjouterEleve'%}"><center>Ajouter un élève</center> </a>
+                <thead>
+                  <tr>
+                        <th>Id</th>
+                        <th>Nom</th>
+                        <th>Postnom</th>
+                        <th>Prénom</th>
+                        <th>Sexe</th>
+                        <th>Date de Naissance</th>
+                        
+                  </tr>
+                </thead>
+                <tbody>
+                    {% for eleve in eleves %}
+                    <tr>
+                    <td >{{eleve.id}}</td>
+                    <td>{{eleve.Nom }}</td>
+                    <td> {{eleve.Postnom}}</td>
+                    <td> {{eleve.Prénom}}</td>
+                    <td>{{ eleve.Sexe }}</td>
+                    <td>{{ eleve.Date_de_naissance }}</td>
+                    </tr>
+                 {% empty %}
+                    <tr>
+                         <td colspan="6">Aucun élève trouvé </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+                {% endblock %}
+              </table>
+    </body>
+        {% endblock %}
+    </html>

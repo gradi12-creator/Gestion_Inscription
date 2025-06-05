@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+    <body>
+        {% block content %}
+            {% block tableaux %}
+            <table class="table" <h1><CEnter>ENSEIGNANTS</CEnter> </h1><a href="{% url 'AjouterEnseignant'%}"><center>Ajouter un enseignant</center> </a>
+                <thead>
+                  <tr>
+                        <th>Id</th>
+                        <th>Nom</th>
+                        <th>Postnom</th>
+                        <th>Prénom</th>
+                        <th>Sexe</th>
+                        <th>Niveau d'Etudes</th>
+                        <th>Date de naissance</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {% for enseignant in enseignants %}
+                    <tr>
+                    <td >{{enseignant.id}}</td>
+                    <td>{{enseignant.Nom }}</td>
+                    <td> {{enseignant.Postnom}}</td>
+                    <td> {{enseignant.Prénom}}</td>
+                    <td>{{ enseignant.Sexe }}</td>
+                    <td>{{ enseignant.Niveau_Etudes }}</td>
+                    <td>{{ enseignant.Date_de_naissance }}</td>
+                    </tr>
+                 {% empty %}
+                    <tr>
+                         <td colspan="6">Aucun enseignant trouvé </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+                {% endblock %}
+              </table>
+    </body>
+        {% endblock %}
+    </html>
+    
+
+    
+        
+

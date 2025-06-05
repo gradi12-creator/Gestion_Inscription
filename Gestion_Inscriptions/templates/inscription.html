@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+    <body>
+        {% block content %}
+            {% block tableaux %}
+            <table class="table" <h1><CEnter>INSCRIPTIONS</CEnter> </h1><a href="{% url 'AjouterInscription' %}"><center>Ajouter une inscription</center> </a>
+                <thead>
+                  <tr>
+                    <th>Id</th>
+                    <th>Date</th>
+                    <th>Elève</th>
+                    <th>Classe</th>
+                    <th>Année Scolaire</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {% for inscription in inscriptions %}
+                    <tr>
+                    <td>{{inscription.id}}</td>
+                    <td>{{inscription.Date }}</td>
+                    <td> {{inscription.Elève}}</td>
+                    <td> {{inscription.Classe}}</td>
+                    <td>{{ inscription.Année }}</td>
+                    </tr>
+                 {% empty %}
+                    <tr>
+                         <td colspan="6">Aucune inscription trouvée </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+                {% endblock %}
+              </table>
+                    <table border="1" align="center" title="RECETTES">
+          
+       
+    </body>
+        {% endblock %}
+    </html>
+    
+
+    
+        
+

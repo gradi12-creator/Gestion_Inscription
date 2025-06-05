@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+    <body>
+        {% block content %}
+            {% block tableaux %}
+            <table class="table" <h1><CEnter>ANNEES SCOLAIRES</CEnter> </h1><a href="{% url 'AjouterAnnee'%}"><center>Ajouter une année</center> </a>
+                <thead>
+                  <tr>
+                        <th>Id</th>
+                        <th>Année Scolaire</th>
+                     
+                  </tr>
+                </thead>
+                <tbody>
+                    {% for année in années %}
+                    <tr>
+                    <td >{{année.id}}</td>
+                    <td>{{année.libellé }}</td>
+              
+                    </tr>
+                 {% empty %}
+                    <tr>
+                         <td colspan="6">Aucune année  trouvée </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+                {% endblock %}
+              </table>
+    </body>
+        {% endblock %}
+    </html>

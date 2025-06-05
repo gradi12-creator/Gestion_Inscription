@@ -1,0 +1,19 @@
+
+{% extends "log.html" %}
+<body>
+    {% block content %}
+    <br>
+    <br>
+    <h1> <center>Connexion</center></h1>
+    <br>
+    <hr>
+    <form method="post">
+        {% csrf_token %}
+        <center> <br> <br> <br>{{ form.as_p}}</center>
+        <center> <input type="hidden" name="next" value="{% url 'inscription' %}"></center>
+        <center> <button type="submit" class="btn btn-primary">Se connecter</button></center> 
+      </form>
+      {% endblock %}
+</body>
+
+</html>
